@@ -14,6 +14,7 @@ source:
 
 build:
   number: 0
+  skip: True  # [linux and (s390x or ppc64le)]
 
 # test:
 #   imports:
