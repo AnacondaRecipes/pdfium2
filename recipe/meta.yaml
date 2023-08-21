@@ -1,0 +1,40 @@
+{% set name = "pdfium2-binaries" %}
+{% set version = "118.0.5961" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  path: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-mac-arm64.tgz  # [osx and arm64]
+  path: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-mac-x64.tgz  # [osx and x86_64]
+  path: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-linux-x64.tgz  # [linux and x86_64]
+  path: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-linux-arm64.tgz  # [linux and aarch64]
+  path: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-win-x64.tgz  # [win]
+
+build:
+  number: 0
+
+# test:
+#   imports:
+#     - pypdfium2
+#   commands:
+#     - pip check
+#     - pypdfium2 --help
+#   requires:
+#     - pip
+
+about:
+  home: https://pdfium.googlesource.com/pdfium
+  summary: pre-compiled binaries of the PDFium library
+  description: |
+    This project hosts pre-compiled binaries of the PDFium library, an open-source library for PDF manipulation and rendering.
+  license: Apache-2.0
+  license-family: Apache
+  license-files: LICENSE
+  doc_url: https://pdfium.googlesource.com/pdfium
+  dev_url: https://github.com/bblanchon/pdfium-binaries
+
+extra:
+  recipe-maintainers:
+    - boldorider4
