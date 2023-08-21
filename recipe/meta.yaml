@@ -25,13 +25,13 @@ build:
 #     - pip
 
 about:
-  home: https://pdfium.googlesource.com/pdfium
+  home: https://github.com/bblanchon/pdfium-binaries
   summary: pre-compiled binaries of the PDFium library
   description: |
     This project hosts pre-compiled binaries of the PDFium library, an open-source library for PDF manipulation and rendering.
   license: Apache-2.0
   license-family: Apache
-  license-files: LICENSE
+  license-file: LICENSE
   doc_url: https://pdfium.googlesource.com/pdfium
   dev_url: https://github.com/bblanchon/pdfium-binaries
 
