@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  path: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-mac-arm64.tgz  # [osx and arm64]
-  path: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-mac-x64.tgz  # [osx and x86_64]
-  path: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-linux-x64.tgz  # [linux and x86_64]
-  path: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-linux-arm64.tgz  # [linux and aarch64]
-  path: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-win-x64.tgz  # [win]
+  url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-mac-arm64.tgz  # [osx and arm64]
+  url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-mac-x64.tgz  # [osx and x86_64]
+  url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-linux-x64.tgz  # [linux and x86_64]
+  url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-linux-arm64.tgz  # [linux and aarch64]
+  url: https://github.com/bblanchon/pdfium-binaries/releases/download/chromium%2F5961/pdfium-v8-win-x64.tgz  # [win]
 
 build:
   number: 0
