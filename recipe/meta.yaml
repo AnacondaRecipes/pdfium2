@@ -21,10 +21,10 @@ source:
 build:
   number: 0
   skip: True  # [linux and (s390x or ppc64le)]
-  missing_dso_whitelist:      # [linux and aarch64]
-    - /lib64/libpthread.so.*  # [linux and aarch64]
-    - /lib64/libm.so.*        # [linux and aarch64]
-    - lib/libgcc_s.so.*       # [linux and aarch64]
+  missing_dso_whitelist:      # [linux]
+    - /lib64/libpthread.so.0  # [linux]
+    - /lib64/libm.so.6        # [linux]
+    - lib/libgcc_s.so.1       # [linux]
 
 requirements:
   host:
