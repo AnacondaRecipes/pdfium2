@@ -1,6 +1,6 @@
 aggregate_branch: pdfium
 aggregate_check: false
 upload_channels:
-  - boldorider4-test-channel:pdfium
+  - boldorider4-test-channel: pdfium
 channels:
-  - boldorider4-test-channel:pdfium
+  - boldorider4-test-channel: pdfium
