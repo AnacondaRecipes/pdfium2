@@ -1,5 +1,5 @@
 {% set name = "pdfium-binaries" %}
-{% set version = "118.0.5961" %}
+{% set version = "118.0.5868" %}
 
 package:
   name: {{ name|lower }}
