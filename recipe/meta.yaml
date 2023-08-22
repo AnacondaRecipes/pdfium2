@@ -52,3 +52,4 @@ extra:
     - boldorider4
   skip-lints:
     - missing_section
+    - invalid_url
