@@ -26,6 +26,7 @@ build:
     - /lib64/libm.so.6              # [linux]
     - /lib64/libc.so.6              # [linux]
     - /lib/libgcc_s.so.1            # [linux]
+    - /lib64/libgcc_s.so.1          # [linux and aarch64]
     - /lib64/ld-linux-aarch64.so.1  # [linux and aarch64]
     - /lib64/libgcc_s.so.1          # [linux and x86_64]
     - /lib64/ld-linux-x86-64.so.2   # [linux and x86_64]
