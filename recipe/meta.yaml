@@ -24,7 +24,7 @@ build:
   missing_dso_whitelist:      # [linux]
     - /lib64/libpthread.so.0  # [linux]
     - /lib64/libm.so.6        # [linux]
-    - lib/libgcc_s.so.1       # [linux]
+    - /lib/libgcc_s.so.1      # [linux]
 
 test:
   commands:
