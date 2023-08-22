@@ -26,10 +26,6 @@ build:
     - /lib64/libm.so.6        # [linux]
     - lib/libgcc_s.so.1       # [linux]
 
-requirements:
-  host:
-    - python
-
 test:
   commands:
     - test -f $PREFIX/lib/libpdfium.dylib  # [osx]
