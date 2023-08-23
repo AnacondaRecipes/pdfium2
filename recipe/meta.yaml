@@ -1,0 +1,60 @@
+{% set name = "pdfium-binaries" %}
+{% set version = "118.0.5868" %}
+{% set patch = version.split(".")[2] %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/bblanchon/{{ name }}/releases/download/chromium%2F{{ patch }}/{{ name.split('-')[0] }}-v8-mac-arm64.tgz  # [osx and arm64]
+  sha256: 60a6d07bb5ff672fe43601e9b2b21e0859f645b3c22bd7f29a2fa664df1daa09                                                         # [osx and arm64]
+  fn: {{ name }}-v8-{{ version }}-osx-arm64.tgz                                                                                    # [osx and arm64]
+  url: https://github.com/bblanchon/{{ name }}/releases/download/chromium%2F{{ patch }}/{{ name.split('-')[0] }}-v8-mac-x64.tgz  # [osx and x86_64]
+  sha256: bfc88f6208cf7016e8e24db3e7c72da0ecb34c8454c45aa7a2899ac5ef0e2cc0                                                       # [osx and x86_64]
+  fn: {{ name }}-v8-{{ version }}-osx-64.tgz                                                                                     # [osx and x86_64]
+  url: https://github.com/bblanchon/{{ name }}/releases/download/chromium%2F{{ patch }}/{{ name.split('-')[0] }}-v8-linux-x64.tgz  # [linux and x86_64]
+  sha256: 50e2fdb88e9ca56f61ffe8720c8a5b9327fbf06e7f5c740a9ea3f023e2b6b053                                                         # [linux and x86_64]
+  fn: {{ name }}-v8-{{ version }}-linux-64.tgz                                                                                     # [linux and x86_64]
+  url: https://github.com/bblanchon/{{ name }}/releases/download/chromium%2F{{ patch }}/{{ name.split('-')[0] }}-v8-linux-arm64.tgz  # [linux and aarch64]
+  sha256: dd4402f93b12da247cfd1f121bf6b4e5a0e585f912f1845351e207847925058a                                                           # [linux and aarch64]
+  fn: {{ name }}-v8-{{ version }}-linux-aarch64.tgz                                                                                  # [linux and aarch64]
+  url: https://github.com/bblanchon/{{ name }}/releases/download/chromium%2F{{ patch }}/{{ name.split('-')[0] }}-v8-win-x64.tgz  # [win]
+  sha256: 97b1f488f6af20362f4b58d0c49e6a3d8af011631d7febceefc7ee168b29319d                                                       # [win]
+  fn: {{ name }}-v8-{{ version }}-win-64.tgz                                                                                     # [win]
+
+build:
+  number: 0
+  skip: True  # [linux and (s390x or ppc64le)]
+  missing_dso_whitelist:            # [linux]
+    - /lib64/libpthread.so.0        # [linux]
+    - /lib64/libm.so.6              # [linux]
+    - /lib64/libc.so.6              # [linux]
+    - /lib/libgcc_s.so.1            # [linux]
+    - /lib64/libgcc_s.so.1          # [linux]
+    - /lib64/ld-linux-aarch64.so.1  # [linux and aarch64]
+    - /lib64/ld-linux-x86-64.so.2   # [linux and x86_64]
+
+test:
+  commands:
+    - test -f $PREFIX/lib/libpdfium.dylib  # [osx]
+    - test -f $PREFIX/lib/libpdfium.so  # [linux]
+    - if not exist "%LIBRARY_LIB%\\pdfium.dll.lib" exit 1  # [win]
+
+about:
+  home: https://github.com/bblanchon/pdfium-binaries
+  summary: pre-compiled binaries of the PDFium library
+  description: |
+    This project hosts pre-compiled binaries of the PDFium library, an open-source library for PDF manipulation and rendering.
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE
+  doc_url: https://pdfium.googlesource.com/pdfium
+  dev_url: https://github.com/bblanchon/pdfium-binaries
+
+extra:
+  recipe-maintainers:
+    - boldorider4
+  skip-lints:
+    - missing_section
+    - invalid_url
