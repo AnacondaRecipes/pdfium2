@@ -1,8 +1,11 @@
-# Copy over the include and lib dirs
-mkdir ${PREFIX}/include && cp -r ${SRC_DIR}/include/* ${PREFIX}/include
-if [[ $? -ne 0 ]]; then exit 1; fi
-
-mkdir ${PREFIX}/lib && cp -r ${SRC_DIR}/lib/* ${PREFIX}/lib
-if [[ $? -ne 0 ]]; then exit 1; fi
+# Copy over the files in include and lib dirs
+for dir in "include" "include/cpp" "lib"
+do
+    for filename in $(basename $(find ${SRC_DIR}/${dir} -type f -maxdepth 1) || exit 1)
+        do mkdir -p ${PREFIX}/${dir} && \
+        install -v -m644 ${SRC_DIR}/${dir}/${filename} ${PREFIX}/${dir}/${filename} || \
+        exit 1
+    done
+done
 
 exit 0
