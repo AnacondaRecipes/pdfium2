@@ -66,8 +66,8 @@ test:
     - test -f $PREFIX/lib/libpdfium.so                     # [linux]
     - if not exist "%LIBRARY_LIB%\\pdfium.dll.lib" exit 1  # [win]
     {% for each_header in headers %}
-    - test -f "${PREFIX}/include/{{ each_header }}"        # [osx or linux]
-    - if not exist "%INCLUDE%\\{{ each_header }}" exit 1   # [win]
+    - test -f "${PREFIX}/include/{{ each_header }}"                        # [osx or linux]
+    - if not exist "%LIBRARY_LIB%\\..\\include\\{{ each_header }}" exit 1  # [win]
     {% endfor %}
 
 about:
