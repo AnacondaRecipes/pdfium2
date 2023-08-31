@@ -7,4 +7,7 @@ if %ERRORLEVEL% GEQ 8 exit 1
 robocopy %SRC_DIR%\lib\ %LIBRARY_LIB%\ *.* /E
 if %ERRORLEVEL% GEQ 8 exit 1
 
+robocopy %SRC_DIR%\bin\ %LIBRARY_BIN%\ *.* /E
+if %ERRORLEVEL% GEQ 8 exit 1
+
 exit 0

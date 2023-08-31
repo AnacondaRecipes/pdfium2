@@ -24,7 +24,7 @@ source:
   fn: {{ name }}-{{ version }}-win-64.tgz                                                                                     # [win]
 
 build:
-  number: 1
+  number: 2
   skip: True  # [linux and (s390x or ppc64le)]
   missing_dso_whitelist:            # [linux]
     - /lib64/libpthread.so.0        # [linux]
@@ -65,6 +65,7 @@ test:
     - test -f $PREFIX/lib/libpdfium.dylib                  # [osx]
     - test -f $PREFIX/lib/libpdfium.so                     # [linux]
     - if not exist "%LIBRARY_LIB%\\pdfium.dll.lib" exit 1  # [win]
+    - if not exist "%LIBRARY_BIN%\\pdfium.dll" exit 1      # [win]
     {% for each_header in headers %}
     - test -f "${PREFIX}/include/{{ each_header }}"                        # [osx or linux]
     - if not exist "%LIBRARY_LIB%\\..\\include\\{{ each_header }}" exit 1  # [win]
