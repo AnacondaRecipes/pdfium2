@@ -73,9 +73,11 @@ test:
 
 about:
   home: https://github.com/bblanchon/pdfium-binaries
-  summary: pre-compiled binaries of the PDFium library
+  summary: repack of pdfium-binaries
   description: |
-    This project hosts pre-compiled binaries of the PDFium library, an open-source library for PDF manipulation and rendering.
+    Pre-compiled binaries of the PDFium library, an open-source library for PDF manipulation and rendering.
+    Note: This is a third-party repack. It includes builds from pdfium-binaries, but is managed by
+    Anaconda Inc., not bblanchon. Upstream also provide their own conda builds at bblanchon::pdfium-binaries.
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
